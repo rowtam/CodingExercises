@@ -5,7 +5,7 @@
  */
 package org.sparkapp;
 
-/**
+/**a
  *
  * @author Ronnie
  */
@@ -91,7 +91,26 @@ class TrieGraph {
         }
     }
     
+     private void show(Object s) {
+        System.out.println(s.toString());
+    }
+
     public void run() {
+        /*
+        Input
+["Trie", "insert", "search", "search", "startsWith", "insert", "search"]
+[[], ["apple"], ["apple"], ["app"], ["app"], ["app"], ["app"]]
+Output
+[null, null, true, false, true, null, true]
+         */
+
+        Trie trie = new Trie();
+        trie.insert("apple");
+        show(trie.search("apple"));   // return True
+        show(trie.search("app"));     // return False
+        show(trie.startsWith("app")); // return True
+        trie.insert("app");
+        show(trie.search("app"));     // return True
     }
     
     public static void main(String[] args) {
